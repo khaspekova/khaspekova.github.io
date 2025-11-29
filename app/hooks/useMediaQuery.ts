@@ -1,0 +1,28 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [query]);
+
+  return matches;
+}
+
+const BREAKPOINTS = {
+  tablet: "(max-width: 768px)",
+  mobile: "(max-width: 480px)",
+};
+
+export { useMediaQuery, BREAKPOINTS };
+

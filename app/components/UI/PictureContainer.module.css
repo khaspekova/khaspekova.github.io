@@ -1,0 +1,11 @@
+@media screen and (max-width: 820px) {
+  .pictureContainer {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pictureContainer {
+    height: 250px;
+  }
+}

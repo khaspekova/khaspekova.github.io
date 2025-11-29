@@ -1,0 +1,10 @@
+.layout {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.layout h2 {
+  margin-top: 120px;
+  text-align: center;
+  font-size: var(--font-large);
+}
