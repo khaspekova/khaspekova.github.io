@@ -2,9 +2,12 @@
   margin-bottom: 120px;
 }
 
-.homeContainer .logoSection,
-.homeContainer .homeAboutSection {
+.homeContainer .logoSection {
   margin-bottom: 80px;
+}
+
+.homeContainer .homeAboutSection {
+  margin-bottom: 160px;
 }
 
 .homeContainer section {

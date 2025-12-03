@@ -15,9 +15,9 @@
 }
 
 .resultsImage {
-  width: calc(100% + 30px);
+  width: 100%;
   height: auto;
-  margin-right: -30px;
+  padding: 80px 0;
 }
 
 .schemaImage {

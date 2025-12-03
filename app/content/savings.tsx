@@ -123,7 +123,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/savings/results.webp",
-      containerClassName: "overflow-visible justify-start",
+      containerClassName: "justify-start h-auto",
       pictureClassName: classes.resultsImage,
       width: 4968,
       height: 1684,
