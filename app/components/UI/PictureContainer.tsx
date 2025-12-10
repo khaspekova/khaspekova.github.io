@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { IPictureContainerImage } from "@/content/home";
 
-interface PictureContainerProps extends IPictureContainerImage {}
+import classes from "./PictureContainer.module.css";
+import { IPictureContainerImage } from "@/content/home";
 
 export default function PictureContainer({
   src,
@@ -11,12 +11,13 @@ export default function PictureContainer({
   width = 800,
   height = 600,
   isPriorityImage = false,
-}: PictureContainerProps) {
+  isDarkBg = false,
+}: IPictureContainerImage) {
   return (
     <div
-      className={`w-full h-[604px] rounded-[10px] flex items-center justify-center ${containerClassName} ${
-        fillContainer ? "overflow-hidden !h-auto" : undefined
-      }`}
+      className={`${classes.pictureContainer} ${containerClassName} ${
+        fillContainer ? classes.fillContainer : undefined
+      } ${isDarkBg ? classes.dark : undefined}`}
     >
       <Image
         src={src}

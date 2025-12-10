@@ -15,12 +15,14 @@ export default function CaseText({
   list,
   link,
 }: CaseTextProps) {
-  const titleComponent = isTitle ? <h1>{title}</h1> : <h2>{title}</h2>;
+  const titleComponent = (
+    <div className="col-start-2 !mr-12">
+      {isTitle ? <h1>{title}</h1> : <h2>{title}</h2>}
+    </div>
+  );
 
   return (
-    <div
-      className={`${classes.textContainer} ${isTitle ? classes.title : ""}`}
-    >
+    <div className={`${classes.textContainer} ${isTitle ? classes.title : ""}`}>
       {link ? (
         <a href={link} target="_blank" rel="noopener noreferrer">
           {titleComponent}
@@ -50,4 +52,3 @@ export default function CaseText({
     </div>
   );
 }
-

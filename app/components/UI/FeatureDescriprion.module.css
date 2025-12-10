@@ -9,20 +9,18 @@
 }
 
 .container h1 {
-  font-weight: 400;
-  font-size: 40px;
+  font-size: var(--font-large);
   line-height: 30px;
 }
 
 .container h2 {
-  font-size: var(--font-large);
+  font-size: var(--font-base);
   line-height: 34px;
 }
 
 .imageContainer {
   margin-top: 160px;
   margin-bottom: 160px;
-  background-color: var(--gray-feature-bg);
 }
 
 @media (max-width: 480px) {

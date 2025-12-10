@@ -10,6 +10,7 @@ export interface IPictureContainerImage {
   width?: number;
   height?: number;
   isPriorityImage?: boolean;
+  isDarkBg?: boolean;
 }
 
 export interface HomeSection {
@@ -20,6 +21,7 @@ export interface HomeSection {
   href: string;
   showPicture?: boolean;
   childComponent?: ReactNode;
+  cursorText?: string;
 }
 
 const boucoup_image_components = [
@@ -58,12 +60,12 @@ export const HOME_SECTIONS: HomeSection[] = [
     scope: "Mobile, B2B2C, Saas",
     href: "/saving-feature",
     img: {
-      src: "/images/home/savings.webp",
-      pictureClassName: classes.imageHeight95,
-      containerClassName: classes.homeSavingsImage,
+      src: "/images/home/savings_new.webp",
+      pictureClassName: classes.homeSavingsImage,
+      containerClassName: classes.homeSavingsContainer,
       fillContainer: false,
-      width: 1227,
-      height: 1702,
+      width: 2228,
+      height: 2372,
       isPriorityImage: true,
     },
   },
@@ -76,12 +78,12 @@ export const HOME_SECTIONS: HomeSection[] = [
     childComponent: boucoup_image,
   },
   {
-    title: "Stratus platform",
-    role: "UX Design, UI Design, Prototyping, Design System, Research",
-    scope: "Web, Mobile, B2B,Saas",
-    href: "/",
+    title: "Design system",
+    role: "UI Design, Design System, Research",
+    scope: "Web, Mobile",
+    href: "/design-system",
     img: {
-      src: "/images/home/stratus.webp",
+      src: "/images/home/system.webp",
       fillContainer: true,
       width: 4960,
       height: 2416,
@@ -98,5 +100,19 @@ export const HOME_SECTIONS: HomeSection[] = [
       width: 4956,
       height: 2416,
     },
+    cursorText: "coming soon",
+  },
+  {
+    title: "Stratus platform",
+    role: "UX Design, UI Design, Prototyping, Design System, Research",
+    scope: "Web, Mobile, B2B,Saas",
+    href: "/",
+    img: {
+      src: "/images/home/stratus.webp",
+      fillContainer: true,
+      width: 4960,
+      height: 2416,
+    },
+    cursorText: "coming soon",
   },
 ];

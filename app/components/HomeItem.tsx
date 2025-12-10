@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+
+import classes from "./HomeItem.module.css";
+
 import PictureContainer from "@/components/UI/PictureContainer";
 import TwoFonts from "@/components/UI/TwoFonts";
-import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
-import classes from "./HomeItem.module.css";
 import { IPictureContainerImage } from "@/content/home";
+import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
+import { useCursorContext } from "@/hooks/useCursorContext";
 
 interface HomeItemProps {
   title: string;
@@ -16,6 +19,7 @@ interface HomeItemProps {
   img?: IPictureContainerImage;
   showPicture?: boolean;
   children?: React.ReactNode;
+  cursorText?: string;
 }
 
 export default function HomeItem({
@@ -26,26 +30,40 @@ export default function HomeItem({
   img,
   showPicture = true,
   children,
+  cursorText,
 }: HomeItemProps) {
   const isMobile = useMediaQuery(BREAKPOINTS.mobile);
+  const { setCursorText } = useCursorContext();
 
-  const viewButton = (
-    <Link className={classes.viewButton} href={href}>
-      <div className={classes.viewButtonContainer}>
-        <p className="font-small">View</p>
-        <Image
-          className={classes.icon}
-          src="/icons/icon-down.svg"
-          alt=""
-          width={18}
-          height={18}
-        />
-      </div>
-    </Link>
-  );
+  const handleMouseEnter = () => {
+    setCursorText(cursorText || "");
+  };
+
+  const handleMouseLeave = () => {
+    setCursorText("");
+  };
+
+  // const viewButton = (
+  //   <Link className={classes.viewButton} href={href}>
+  //     <div className={classes.viewButtonContainer}>
+  //       <p className="font-small">View</p>
+  //       <Image
+  //         className={classes.icon}
+  //         src="/icons/icon-down.svg"
+  //         alt=""
+  //         width={18}
+  //         height={18}
+  //       />
+  //     </div>
+  //   </Link>
+  // );
 
   return (
-    <div className={classes.homeItem}>
+    <div
+      className={classes.homeItem}
+      onMouseEnter={cursorText ? handleMouseEnter : undefined}
+      onMouseLeave={cursorText ? handleMouseLeave : undefined}
+    >
       <Link href={href}>
         {showPicture && img && <PictureContainer {...img} />}
         {!showPicture && children}
@@ -54,7 +72,7 @@ export default function HomeItem({
       <div className={classes.featureInfo}>
         <div className={`${classes.left}`}>
           <p className={`font-large`}>{title}</p>
-          {!isMobile && viewButton}
+          {/* {!isMobile && viewButton} */}
         </div>
 
         <TwoFonts
@@ -65,7 +83,7 @@ export default function HomeItem({
 
         <TwoFonts firstLine={scope} secondLine="Scope" />
 
-        {isMobile && viewButton}
+        {/* {isMobile && viewButton} */}
       </div>
     </div>
   );

@@ -1,5 +1,18 @@
+.homeSavingsContainer {
+  background-image: url("/images/home/gradient.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: end;
+}
+
 .homeSavingsImage {
-  background: linear-gradient(var(--violet-lavender), var(--blue-periwinkle));
+  padding-top: 32px;
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 95%;
+  object-fit: contain;
 }
 
 .imageHeight95 {

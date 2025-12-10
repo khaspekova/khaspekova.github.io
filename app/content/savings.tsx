@@ -1,4 +1,4 @@
-import classes from "@/Savings.module.css";
+import classes from "./Savings.module.css";
 
 export const TABLE_CONTENT = [
   "Mobile app",
@@ -38,10 +38,11 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/savings/solution.webp",
-      containerClassName: "items-end h-auto",
+      containerClassName: "flex !items-end !h-auto",
       pictureClassName: classes.solutionImage,
       width: 4956,
       height: 1936,
+      isDarkBg: true,
     },
   },
   {
@@ -58,6 +59,7 @@ export const SECTIONS = [
       pictureClassName: classes.image90,
       width: 3974,
       height: 2084,
+      isDarkBg: true,
     },
   },
   {
@@ -103,6 +105,7 @@ export const SECTIONS = [
       pictureClassName: classes.image90,
       width: 4132,
       height: 2100,
+      isDarkBg: true,
     },
   },
   {
@@ -139,11 +142,11 @@ export const SECTIONS = [
       },
     ],
     image: {
-      src: "/images/savings/schema.webp",
+      src: "/images/savings/schema_new.webp",
       isFullWidth: true,
       pictureClassName: classes.schemaImage,
       width: 5120,
-      height: 3228,
+      height: 3068,
     },
   },
 ];

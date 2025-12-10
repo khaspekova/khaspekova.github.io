@@ -126,6 +126,10 @@ ul {
   user-select: none;
 }
 
+.custom-cursor.long-text p {
+  font-size: 5px;
+}
+
 .custom-cursor.hover {
   transform: scale(2.5);
 }

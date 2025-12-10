@@ -43,6 +43,7 @@ export const SECTIONS = [
       width: 4064,
       height: 1960,
       isPriorityImage: true,
+      isDarkBg: true,
     },
   },
   {
@@ -145,6 +146,7 @@ export const SECTIONS = [
       pictureClassName: classes.image95,
       width: 4780,
       height: 3052,
+      isDarkBg: true,
     },
   },
   {
@@ -168,10 +170,10 @@ export const SECTIONS = [
       },
     ],
     image: {
-      src: "/images/boucoup/learnings.webp",
+      src: "/images/boucoup/learnings_dark.webp",
       fillContainer: true,
       width: 4956,
-      height: 2668,
+      height: 2972,
     },
   },
 ];

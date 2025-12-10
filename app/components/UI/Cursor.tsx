@@ -11,7 +11,6 @@ export default function Cursor() {
   const { cursorText } = useCursorContext();
   const pathname = usePathname();
 
-  // Reset cursor state when navigation happens
   useEffect(() => {
     setIsHovering(false);
   }, [pathname]);
@@ -24,10 +23,8 @@ export default function Cursor() {
     const handleMouseEnter = (e: Event) => {
       const target = e.target as HTMLElement;
       if (
-        (target &&
-          (target.tagName === "A" || target.tagName === "BUTTON")) ||
-        (target.closest &&
-          (target.closest("a") || target.closest("button")))
+        (target && (target.tagName === "A" || target.tagName === "BUTTON")) ||
+        (target.closest && (target.closest("a") || target.closest("button")))
       ) {
         setIsHovering(true);
       }
@@ -45,12 +42,10 @@ export default function Cursor() {
       setIsVisible(false);
     };
 
-    // Add event listeners
     document.addEventListener("mousemove", updateCursorPosition);
     document.addEventListener("mouseenter", handleMouseEnterViewport);
     document.addEventListener("mouseleave", handleMouseLeaveViewport);
 
-    // Use event delegation instead of attaching to specific elements
     document.addEventListener("mouseenter", handleMouseEnter, true);
     document.addEventListener("mouseleave", handleMouseLeave, true);
 
@@ -65,15 +60,15 @@ export default function Cursor() {
 
   const toCenter = 12;
 
-  // Show hover state when there's text or when hovering over interactive elements
   const hasText = cursorText.length > 0;
+  const longText = cursorText.length > 8;
   const shouldShowHover = isHovering || hasText;
 
   return (
     <div
       className={`custom-cursor ${shouldShowHover ? "hover" : ""} ${
         isVisible ? "" : "hidden"
-      } ${hasText ? "has-text" : ""}`}
+      } ${hasText ? "has-text" : ""} ${longText ? "long-text" : ""}`}
       style={{
         left: `${cursorPosition.x - toCenter}px`,
         top: `${cursorPosition.y - toCenter}px`,
@@ -83,4 +78,3 @@ export default function Cursor() {
     </div>
   );
 }
-
