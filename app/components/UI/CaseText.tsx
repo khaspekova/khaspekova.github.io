@@ -24,7 +24,12 @@ export default function CaseText({
   return (
     <div className={`${classes.textContainer} ${isTitle ? classes.title : ""}`}>
       {link ? (
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="col-start-2"
+        >
           {titleComponent}
         </a>
       ) : (

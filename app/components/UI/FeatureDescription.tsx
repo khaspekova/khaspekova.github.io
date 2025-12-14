@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import classes from "./FeatureDescriprion.module.css";
+
 import CaseText from "@/components/UI/CaseText";
 import PictureContainer from "@/components/UI/PictureContainer";
 import { IPictureContainerImage } from "@/content/home";

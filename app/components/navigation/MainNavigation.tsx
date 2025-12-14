@@ -1,5 +1,7 @@
 "use client";
 
+import classes from "./MainNavigation.module.css";
+
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
@@ -8,7 +10,6 @@ import BurgerButton from "@/components/navigation/BurgerButton";
 import MobMenu from "@/components/navigation/MobMenu";
 import NavItem from "@/components/navigation/NavItem";
 import { NAV_ITEMS } from "@/content/navigation";
-import classes from "./MainNavigation.module.css";
 
 export default function MainNavigation() {
   const [isOpen, setIsOpen] = useState(false);

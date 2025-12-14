@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 import classes from "./HomeItem.module.css";
 
 import PictureContainer from "@/components/UI/PictureContainer";
 import TwoFonts from "@/components/UI/TwoFonts";
 import { IPictureContainerImage } from "@/content/home";
-import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
+// import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
 import { useCursorContext } from "@/hooks/useCursorContext";
 
 interface HomeItemProps {
@@ -32,7 +32,7 @@ export default function HomeItem({
   children,
   cursorText,
 }: HomeItemProps) {
-  const isMobile = useMediaQuery(BREAKPOINTS.mobile);
+  // const isMobile = useMediaQuery(BREAKPOINTS.mobile);
   const { setCursorText } = useCursorContext();
 
   const handleMouseEnter = () => {
@@ -64,7 +64,7 @@ export default function HomeItem({
       onMouseEnter={cursorText ? handleMouseEnter : undefined}
       onMouseLeave={cursorText ? handleMouseLeave : undefined}
     >
-      <Link href={href}>
+      <Link href={href} className="w-full inline-block">
         {showPicture && img && <PictureContainer {...img} />}
         {!showPicture && children}
       </Link>

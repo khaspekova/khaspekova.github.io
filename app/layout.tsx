@@ -23,10 +23,12 @@ export default function RootLayout({
         <CursorProvider>
           <ScrollProvider>
             <div className="root-layout">
-              <Cursor />
-              <MainNavigation />
-              <main>{children}</main>
-              <Footer />
+              <div className="content">
+                <Cursor />
+                <MainNavigation />
+                <main>{children}</main>
+                <Footer />
+              </div>
             </div>
           </ScrollProvider>
         </CursorProvider>

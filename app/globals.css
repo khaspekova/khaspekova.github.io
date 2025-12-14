@@ -32,12 +32,16 @@
   --blue-frost: #e0e8fd;
   --blue-cornflower: #9db0dd;
 
+  --font-weight-light: 300;
   --font-weight-book: 400;
   --font-weight-medium: 500;
   --font-xs: 12px;
   --font-small: 20px;
   --font-base: 24px;
   --font-large: 32px;
+
+  --max-container-width: 1820px;
+  --max-image-container-height: 756px;
 }
 
 @theme inline {
@@ -74,6 +78,13 @@ ul {
 
 .root-layout {
   margin: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--max-container-width);
 }
 
 .font-small {

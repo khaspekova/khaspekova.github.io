@@ -1,4 +1,4 @@
-import classes from "./Savings.module.css";
+import classes from "./contentClasses.module.css";
 
 export const TABLE_CONTENT = [
   "Mobile app",
@@ -56,7 +56,8 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/savings/understanding.webp",
-      pictureClassName: classes.image90,
+      containerClassName: classes.bocoupUnderstandingImageContainer,
+      pictureClassName: classes.imageHeight80,
       width: 3974,
       height: 2084,
       isDarkBg: true,
@@ -80,7 +81,7 @@ export const SECTIONS = [
     image: {
       src: "/images/savings/challenges.webp",
       containerClassName: classes.challengesImageContainer,
-      pictureClassName: classes.image90,
+      pictureClassName: classes.imageHeight80,
       width: 4328,
       height: 2892,
     },
@@ -102,7 +103,8 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/savings/testing.webp",
-      pictureClassName: classes.image90,
+      containerClassName: classes.bocoupTestingImageContainer,
+      pictureClassName: classes.imageHeight80,
       width: 4132,
       height: 2100,
       isDarkBg: true,
@@ -126,7 +128,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/savings/results.webp",
-      containerClassName: "justify-start h-auto",
+      containerClassName: "justify-start h-auto !max-h-[800px]",
       pictureClassName: classes.resultsImage,
       width: 4968,
       height: 1684,
