@@ -3,16 +3,23 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useScrollContext } from "@/hooks/useScrollContext";
-import classes from "./NavItem.module.css";
+import classes from "@/styles/NavItem.module.css";
 
 interface NavItemProps {
   id: string;
   title: string;
   subtitle: string;
-  href: string;
+  href?: string;
+  onNavigation?: () => void;
 }
 
-export default function NavItem({ id, title, subtitle, href }: NavItemProps) {
+export default function NavItem({
+  id,
+  title,
+  subtitle,
+  href = "",
+  onNavigation,
+}: NavItemProps) {
   const { scrollToRef, activeSection, setActiveSection } = useScrollContext();
   const pathname = usePathname();
   const router = useRouter();
@@ -34,6 +41,9 @@ export default function NavItem({ id, title, subtitle, href }: NavItemProps) {
       scrollToRef(id as "home" | "works" | "publicity" | "about" | "contact");
       setActiveSection(id);
     }
+    if (onNavigation) {
+      onNavigation();
+    }
   };
 
   return (
@@ -43,4 +53,3 @@ export default function NavItem({ id, title, subtitle, href }: NavItemProps) {
     </Link>
   );
 }
-

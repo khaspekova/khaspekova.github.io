@@ -2,14 +2,16 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+
+import classes from "@/styles/Home.module.css";
+
 import { useScrollContext } from "@/hooks/useScrollContext";
+import { HOME_SECTIONS } from "@/content/home";
+import { CONTACT_LINKS } from "@/content/links";
 import AboutSection from "@/components/About";
 import HomeItem from "@/components/HomeItem";
 import LogoSection from "@/components/LogoSection";
 import Publicity from "@/components/Publicity";
-import classes from "./Home.module.css";
-import { HOME_SECTIONS } from "@/content/home";
-import { CONTACT_LINKS } from "@/content/links";
 
 export default function HomePage() {
   const { sectionsRefs, setActiveSection } = useScrollContext();
@@ -30,7 +32,7 @@ export default function HomePage() {
             root: null,
             rootMargin: id === "contact" ? "0px" : "0px 0px -60% 0px",
             threshold: id !== "contact" ? 0.2 : 0.8,
-          }
+          },
         );
         observer.observe(ref.current);
         observers.push(observer);
@@ -47,7 +49,7 @@ export default function HomePage() {
       <section ref={sectionsRefs.home} className={classes.logoSection}>
         <LogoSection />
       </section>
-      <section className={classes.featuresSection} ref={sectionsRefs.works}>
+      <section className="flex flex-col gap-[165px]" ref={sectionsRefs.works}>
         {HOME_SECTIONS.map((item) => (
           <div key={item.title}>
             <HomeItem {...item}>{item.childComponent}</HomeItem>

@@ -1,4 +1,4 @@
-import classes from "./CaseText.module.css";
+import classes from "@/styles/CaseText.module.css";
 
 interface CaseTextProps {
   title: string;
@@ -16,19 +16,23 @@ export default function CaseText({
   link,
 }: CaseTextProps) {
   const titleComponent = (
-    <div className="col-start-2 !mr-12">
+    <div className={`!mr-12 ${classes.title}`}>
       {isTitle ? <h1>{title}</h1> : <h2>{title}</h2>}
     </div>
   );
 
   return (
-    <div className={`${classes.textContainer} ${isTitle ? classes.title : ""}`}>
+    <div
+      className={`${classes.textContainer} ${
+        isTitle ? classes.titleContainer : ""
+      }`}
+    >
       {link ? (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="col-start-2"
+          className={classes.title}
         >
           {titleComponent}
         </a>
@@ -42,7 +46,7 @@ export default function CaseText({
               <p key={i + par.slice(0, 3)}>{par}</p>
             ) : (
               <br key={`br-${i}`} />
-            )
+            ),
           )}
         {list && (
           <ul>

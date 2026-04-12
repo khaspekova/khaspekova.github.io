@@ -1,7 +1,17 @@
 import Image from "next/image";
 
-import classes from "./PictureContainer.module.css";
-import { IPictureContainerImage } from "@/content/home";
+import classes from "@/styles/PictureContainer.module.css";
+
+export interface IPictureContainerImage {
+  src: string;
+  pictureClassName?: string;
+  containerClassName?: string;
+  fillContainer?: boolean;
+  width?: number;
+  height?: number;
+  isPriorityImage?: boolean;
+  isDarkBg?: boolean;
+}
 
 export default function PictureContainer({
   src,

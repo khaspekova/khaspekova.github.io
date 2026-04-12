@@ -1,38 +1,29 @@
 "use client";
 
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 
-import classes from "./HomeItem.module.css";
+import classes from "@/styles/HomeItem.module.css";
 
 import PictureContainer from "@/components/UI/PictureContainer";
-import TwoFonts from "@/components/UI/TwoFonts";
-import { IPictureContainerImage } from "@/content/home";
-// import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
+import { HomeSection } from "@/content/home";
 import { useCursorContext } from "@/hooks/useCursorContext";
 
-interface HomeItemProps {
-  title: string;
-  role: string;
-  scope: string;
-  href: string;
-  img?: IPictureContainerImage;
-  showPicture?: boolean;
+import SectionNumber from "@/components/UI/SectionNumber";
+
+interface HomeItemProps extends HomeSection {
   children?: React.ReactNode;
-  cursorText?: string;
 }
 
 export default function HomeItem({
   title,
-  role,
-  scope,
   href,
   img,
-  showPicture = true,
-  children,
+  description,
+  externalUrl,
   cursorText,
+  children,
 }: HomeItemProps) {
-  // const isMobile = useMediaQuery(BREAKPOINTS.mobile);
   const { setCursorText } = useCursorContext();
 
   const handleMouseEnter = () => {
@@ -43,48 +34,39 @@ export default function HomeItem({
     setCursorText("");
   };
 
-  // const viewButton = (
-  //   <Link className={classes.viewButton} href={href}>
-  //     <div className={classes.viewButtonContainer}>
-  //       <p className="font-small">View</p>
-  //       <Image
-  //         className={classes.icon}
-  //         src="/icons/icon-down.svg"
-  //         alt=""
-  //         width={18}
-  //         height={18}
-  //       />
-  //     </div>
-  //   </Link>
-  // );
-
   return (
     <div
       className={classes.homeItem}
       onMouseEnter={cursorText ? handleMouseEnter : undefined}
       onMouseLeave={cursorText ? handleMouseLeave : undefined}
     >
-      <Link href={href} className="w-full inline-block">
-        {showPicture && img && <PictureContainer {...img} />}
-        {!showPicture && children}
-      </Link>
-
-      <div className={classes.featureInfo}>
-        <div className={`${classes.left}`}>
-          <p className={`font-large`}>{title}</p>
-          {/* {!isMobile && viewButton} */}
+      <SectionNumber num={2} />
+      <div className="flex flex-col justify-between pr-5">
+        <h2 className="text-2xl leading-8 text-black font-medium">{title}</h2>
+        <div className="flex flex-col gap-11">
+          <p className="font-book text-base leading-5 text-black">
+            {description}
+          </p>
+          {externalUrl && (
+            <div>
+              <Link href={externalUrl} target="_blank" className="underline!">
+                visit site
+              </Link>
+            </div>
+          )}
         </div>
-
-        <TwoFonts
-          firstLine={role}
-          secondLine="Role"
-          className={`${classes.rightColOne}`}
-        />
-
-        <TwoFonts firstLine={scope} secondLine="Scope" />
-
-        {/* {isMobile && viewButton} */}
       </div>
+      <Link href={href}>
+        <Image
+          src={img.src}
+          alt=""
+          width={820}
+          height={521}
+          loading={img.isPriorityImage ? "eager" : "lazy"}
+          priority={img.isPriorityImage}
+          className="w-full h-auto aspect-3/2"
+        />
+      </Link>
     </div>
   );
 }

@@ -55,9 +55,9 @@
 }
 
 @media (max-width: 768px) {
-  .homeContainer .featuresSection {
+  /* .homeContainer .featuresSection {
     margin-bottom: 74px;
-  }
+  } */
 
   .linksContainer {
     grid-template-columns: 1fr 1fr;
@@ -77,9 +77,9 @@
     margin-bottom: 80px;
   }
 
-  .homeContainer .featuresSection {
+  /* .homeContainer .featuresSection {
     margin-bottom: 102px;
-  }
+  } */
 
   .linksContainer {
     grid-template-columns: 1fr;

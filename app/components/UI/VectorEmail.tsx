@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useCursorContext } from "@/hooks/useCursorContext";
-import classes from "./VectorEmail.module.css";
+import classes from "@/styles/VectorEmail.module.css";
 import Image from "next/image";
 
 const EMAIL = "k.khaspekova@gmail.com";

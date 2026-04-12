@@ -1,12 +1,13 @@
 import { NAV_ITEMS } from "@/content/navigation";
 import NavItem from "@/components/navigation/NavItem";
-import classes from "./MobileMenu.module.css";
+import classes from "@/styles/MobileMenu.module.css";
 
 interface MobMenuProps {
   isOpen: boolean;
+  onClose: () => void;
 }
 
-export default function MobMenu({ isOpen }: MobMenuProps) {
+export default function MobMenu({ isOpen, onClose }: MobMenuProps) {
   return (
     <div
       className={`${classes.wrapper} ${isOpen ? classes.open : classes.closed}`}
@@ -15,7 +16,7 @@ export default function MobMenu({ isOpen }: MobMenuProps) {
         <ul className={classes.mobMenu}>
           {NAV_ITEMS.slice(1).map((item) => (
             <li key={item.title}>
-              <NavItem {...item} />
+              <NavItem {...item} onNavigation={onClose} />
             </li>
           ))}
         </ul>
@@ -23,4 +24,3 @@ export default function MobMenu({ isOpen }: MobMenuProps) {
     </div>
   );
 }
-

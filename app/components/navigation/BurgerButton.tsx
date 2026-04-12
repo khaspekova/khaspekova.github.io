@@ -1,4 +1,4 @@
-import classes from "./MainNavigation.module.css";
+import classes from "@/styles/MainNavigation.module.css";
 
 interface BurgerButtonProps {
   onClick: () => void;
@@ -16,4 +16,3 @@ export default function BurgerButton({ onClick, isOpen }: BurgerButtonProps) {
     </button>
   );
 }
-

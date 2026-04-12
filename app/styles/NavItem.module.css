@@ -8,16 +8,17 @@
 }
 
 .navItem {
-  font-size: var(--font-xs);
+  font-size: 22px;
+  line-height: 26px;
   font-weight: var(--font-weight-medium);
 }
 
 .active p:first-child {
-  color: var(--orange-active);
+  color: var(--orange-new);
 }
 
 .active p:last-child {
-  color: var(--gray-active);
+  color: var(--black-default);
 }
 
 .default p:first-child {
@@ -25,7 +26,7 @@
 }
 
 .default p:last-child {
-  color: var(--gray-default);
+  color: var(--gray-menu);
 }
 
 .navItem:hover p:first-child {

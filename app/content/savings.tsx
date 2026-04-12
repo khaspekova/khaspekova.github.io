@@ -1,4 +1,4 @@
-import classes from "./contentClasses.module.css";
+import classes from "@/styles/contentClasses.module.css";
 
 export const TABLE_CONTENT = [
   "Mobile app",

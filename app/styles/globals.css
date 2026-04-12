@@ -25,27 +25,41 @@
   --gray-disable: #aeaeae;
   --gray-disable-light: #c3c3c3;
   --gray-feature-bg: #f3f3f3;
-  --orange-active: #c46901;
   --purple-hover: #8a38f5;
   --violet-lavender: #e5e0fd;
   --blue-periwinkle: #b8c0ff;
   --blue-frost: #e0e8fd;
   --blue-cornflower: #9db0dd;
+  --orange-active: #c46901;
+
+  --gray-menu: #6f7074;
+  --orange-new: #ff7716;
+  --white-background: #f7f6f2;
 
   --font-weight-light: 300;
   --font-weight-book: 400;
   --font-weight-medium: 500;
-  --font-xs: 12px;
-  --font-small: 20px;
-  --font-base: 24px;
-  --font-large: 32px;
 
   --max-container-width: 1820px;
   --max-image-container-height: 756px;
 }
 
 @theme inline {
-  --grid-template-columns-logo: 2fr 1fr 3fr;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --font-family-neue: "NeueMontreal", Arial, sans-serif;
+
+  --font-weight-book: 400;
+  --font-weight-medium: 500;
+
+  --color-gray-menu: var(--gray-menu);
+  --color-orange-new: var(--orange-new);
+  --color-white-background: var(--white-background);
 }
 
 * {
@@ -60,7 +74,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--white-background);
   color: var(--foreground);
   font-family: "NeueMontreal", Arial, sans-serif;
   font-weight: var(--font-weight-book);
@@ -90,11 +104,6 @@ ul {
 .font-small {
   font-size: var(--font-small);
   line-height: 25px;
-}
-
-.font-base {
-  font-size: var(--font-base);
-  line-height: 31px;
 }
 
 .font-base-narrow {

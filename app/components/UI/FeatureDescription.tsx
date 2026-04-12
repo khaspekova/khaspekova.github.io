@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import classes from "./FeatureDescriprion.module.css";
+import classes from "@/styles/FeatureDescription.module.css";
 
 import CaseText from "@/components/UI/CaseText";
 import PictureContainer from "@/components/UI/PictureContainer";

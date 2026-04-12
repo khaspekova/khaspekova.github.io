@@ -1,4 +1,4 @@
-import classes from "./contentClasses.module.css";
+import classes from "@/styles/contentClasses.module.css";
 
 export const TABLE_CONTENT = [
   "Mobile app, Web admin panel",
@@ -39,7 +39,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/boucoup/challenge.webp",
-      pictureClassName: classes.image90,
+      pictureClassName: classes.imageHeight80,
       width: 4064,
       height: 1960,
       isPriorityImage: true,
@@ -120,7 +120,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/boucoup/results.webp",
-      pictureClassName: classes.image95,
+      pictureClassName: classes.imageHeight80,
       width: 4776,
       height: 1900,
     },
@@ -142,8 +142,8 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/boucoup/business.webp",
-      containerClassName: classes.boucoupBusinessImage,
-      pictureClassName: classes.image95,
+      containerClassName: classes.boucoupBusinessImageContainer,
+      pictureClassName: classes.image90,
       width: 4780,
       height: 3052,
       isDarkBg: true,
@@ -171,6 +171,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/boucoup/learnings_dark.webp",
+      containerClassName: classes.learningsImageContainer,
       fillContainer: true,
       width: 4956,
       height: 2972,

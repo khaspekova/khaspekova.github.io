@@ -1,4 +1,4 @@
-import classes from "./contentClasses.module.css";
+import classes from "@/styles/contentClasses.module.css";
 
 export const TABLE_CONTENT = [
   "Mobile & Web system",
@@ -46,6 +46,7 @@ export const SECTIONS = [
       src: "/images/system/solution.webp",
       width: 5120,
       height: 2880,
+      containerClassName: classes.systemSolutionImageContainer,
       isPriorityImage: true,
       isFullWidth: true,
     },
@@ -67,6 +68,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/system/guidelines.webp",
+      containerClassName: classes.systemJourneyOneImageContainer,
       width: 5120,
       height: 3312,
       isFullWidth: true,
@@ -94,6 +96,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/system/checklist.webp",
+      containerClassName: classes.systemJourneyTwoImageContainer,
       width: 5100,
       height: 2936,
       isFullWidth: true,
@@ -116,6 +119,7 @@ export const SECTIONS = [
     ],
     image: {
       src: "/images/system/final.webp",
+      containerClassName: classes.systemImpactImageContainer,
       width: 5120,
       height: 2880,
       isFullWidth: true,

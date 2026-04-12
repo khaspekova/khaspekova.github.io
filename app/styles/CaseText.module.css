@@ -1,5 +1,9 @@
-.title {
+.titleContainer {
   margin-bottom: 56px;
+}
+
+.title {
+  grid-column: 2;
 }
 
 .textContainer {
@@ -23,6 +27,10 @@
   .textContainer {
     grid-template-columns: 1fr 2fr;
     row-gap: 24px;
+  }
+
+  .title {
+    grid-column: unset;
   }
 }
 

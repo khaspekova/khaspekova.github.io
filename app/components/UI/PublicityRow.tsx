@@ -1,4 +1,4 @@
-import classes from "./PublicityRow.module.css";
+import classes from "@/styles/PublicityRow.module.css";
 
 interface PublicityRowProps {
   firstColumn: {
@@ -43,4 +43,3 @@ export default function PublicityRow({
     </div>
   );
 }
-

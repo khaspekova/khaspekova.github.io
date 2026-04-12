@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classes from "./AboutSection.module.css";
+import classes from "@/styles/AboutSection.module.css";
 
 const aboutText = [
   `Hi, I'm Kristina and I love design! I graduated with a bachelor's degree in interactive design in 2012.
@@ -35,4 +35,3 @@ export default function AboutSection() {
     </div>
   );
 }
-

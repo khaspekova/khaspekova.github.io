@@ -1,5 +1,5 @@
 import PublicityRow from "@/components/UI/PublicityRow";
-import classes from "./Publicity.module.css";
+import classes from "@/styles/Publicity.module.css";
 
 const PUBLICITY_ITEMS = [
   {

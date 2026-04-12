@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import { CursorProvider } from "@/context/CursorContext";
 import { ScrollProvider } from "@/context/ScrollContext";
 import Cursor from "@/components/UI/Cursor";

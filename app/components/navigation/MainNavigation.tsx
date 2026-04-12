@@ -1,6 +1,6 @@
 "use client";
 
-import classes from "./MainNavigation.module.css";
+import classes from "@/styles/MainNavigation.module.css";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -48,18 +48,31 @@ export default function MainNavigation() {
             isOpen ? classes.open : undefined
           } overflowComponent`}
         >
-          <NavItem {...NAV_ITEMS[0]} />
+          <NavItem {...NAV_ITEMS[0]} onNavigation={() => setIsOpen(false)} />
           <BurgerButton onClick={switchMenu} isOpen={isOpen} />
         </nav>
-        <MobMenu isOpen={isOpen} />
+        <MobMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </>
     );
   }
 
   return (
-    <nav className={`${classes.nav} overflowComponent`}>
+    // <nav className={`${classes.nav} overflowComponent`}>
+    //   <ul>
+    //     {NAV_ITEMS.map((item, i) => (
+    //       <li key={item.id} className={classes[`column-${i}`]}>
+    //         <NavItem {...item} />
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </nav>
+
+    <nav className={`${classes.nav}`}>
+      <div>
+        <NavItem {...NAV_ITEMS[0]} />
+      </div>
       <ul>
-        {NAV_ITEMS.map((item, i) => (
+        {NAV_ITEMS.slice(1).map((item, i) => (
           <li key={item.id} className={classes[`column-${i}`]}>
             <NavItem {...item} />
           </li>

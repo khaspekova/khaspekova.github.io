@@ -21,7 +21,7 @@
   background: linear-gradient(#161329, #2a293c);
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 768px) {
   .pictureContainer {
     height: 450px;
   }

@@ -1,13 +1,10 @@
 export const NAV_ITEMS = [
-  { id: "home", title: "Kristina", subtitle: "Khaspekova", href: "" },
-  { id: "works", title: "Works", subtitle: "Featured project", href: "" },
+  { id: "home", title: "Kristina", subtitle: "Khaspekova" },
   {
-    id: "publicity",
-    title: "Publicity",
-    subtitle: "Speaking & volunteering",
-    href: "",
+    id: "works",
+    title: "Selected Works",
+    subtitle: "02/",
   },
-  { id: "about", title: "About", subtitle: "Career & hobbies", href: "" },
-  { id: "contact", title: "Contact", subtitle: "Get in touch", href: "" },
+  { id: "about", title: "About", subtitle: "03/" },
+  { id: "contact", title: "Contact", subtitle: "Get in touch" },
 ];
-

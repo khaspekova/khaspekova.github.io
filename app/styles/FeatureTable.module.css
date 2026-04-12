@@ -31,12 +31,27 @@
   padding-bottom: 80px;
 }
 
-@media (max-width: 480px) {
-  .row p {
-    padding-right: 0;
-  }
+.row.overview {
+  grid-template-columns: unset;
+}
 
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+}
+
+@media (max-width: 480px) {
   .container {
     margin-bottom: 44px;
+  }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content {
+    padding-bottom: 60px;
+    /* border-bottom: solid 0.4px var(--white-table); */
   }
 }

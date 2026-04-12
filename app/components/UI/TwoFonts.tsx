@@ -1,4 +1,4 @@
-import classes from "./TwoFonts.module.css";
+import classes from "@/styles/TwoFonts.module.css";
 
 interface TwoFontsProps {
   firstLine: string;
@@ -18,4 +18,3 @@ export default function TwoFonts({
     </div>
   );
 }
-
