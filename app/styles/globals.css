@@ -176,7 +176,17 @@
   margin-right: -20px;
 }
 
-/* Show default cursor on mobile */
+/* Touch devices (phones, tablets incl. iPad landscape): no custom cursor */
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+
 @media (max-width: 768px) {
   .root-layout {
     margin: 0 16px;

@@ -11,10 +11,10 @@ const aboutText = [
 export default function AboutSection() {
   return (
     <>
-      <div className={`${classes.aboutSectionGrid} w-full sm:w-2/3 mb-[60px]`}>
+      <div className={`${classes.aboutSectionGrid} w-full lg:w-2/3 mb-10 md:mb-[60px]`}>
         <SectionNumber num={3} />
-        <h2 className="text-[44px] leading-11 font-medium">About</h2>
-        <div className="text-[22px] leading-[26px] font-medium">
+        <h2 className="text-[32px] leading-8 md:text-[44px] md:leading-11 font-medium">About</h2>
+        <div className={`${classes.text} text-lg leading-[22px] md:text-[22px] md:leading-[26px] font-medium`}>
           <p>{aboutText[0]}</p>
           <br />
           <p>{aboutText[1]}</p>

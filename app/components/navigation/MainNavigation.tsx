@@ -40,33 +40,35 @@ export default function MainNavigation() {
     };
   }, [isOpen]);
 
-  if (isMobile) {
-    return (
-      <>
-        <nav
-          className={`${classes.nav} ${
-            isOpen ? classes.open : undefined
-          } overflowComponent`}
-        >
-          <NavItem {...NAV_ITEMS[0]} onNavigation={() => setIsOpen(false)} />
-          <BurgerButton onClick={switchMenu} isOpen={isOpen} />
-        </nav>
-        <MobMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      </>
-    );
-  }
+  // close the mobile menu if the screen becomes wide (rotation / resize)
+  useEffect(() => {
+    if (!isMobile) setIsOpen(false);
+  }, [isMobile]);
 
+  // Desktop list and burger are both rendered; CSS decides which one is visible,
+  // so there is no flash of the wrong menu before JS loads.
   return (
-    <nav className={`${classes.nav} overflowComponent`}>
-      <NavItem {...NAV_ITEMS[0]} />
+    <>
+      <nav
+        className={`${classes.nav} ${
+          isOpen ? classes.open : ""
+        } overflowComponent`}
+      >
+        <NavItem {...NAV_ITEMS[0]} onNavigation={() => setIsOpen(false)} />
 
-      <ul>
-        {NAV_ITEMS.slice(1).map((item, i) => (
-          <li key={item.id} className={classes[`column-${i}`]}>
-            <NavItem {...item} />
-          </li>
-        ))}
-      </ul>
-    </nav>
+        <ul className={classes.desktopList}>
+          {NAV_ITEMS.slice(1).map((item) => (
+            <li key={item.id}>
+              <NavItem {...item} />
+            </li>
+          ))}
+        </ul>
+
+        <div className={classes.burger}>
+          <BurgerButton onClick={switchMenu} isOpen={isOpen} />
+        </div>
+      </nav>
+      <MobMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    </>
   );
 }

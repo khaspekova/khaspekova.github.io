@@ -3,3 +3,47 @@
   display: grid;
   grid-template-columns: 1fr 1fr 4fr;
 }
+
+.info {
+  padding-right: 20px;
+}
+
+.infoBottom {
+  gap: 44px;
+}
+
+@media (max-width: 1024px) {
+  .homeItem {
+    grid-template-columns: 1fr 1.5fr 4fr;
+  }
+}
+
+/* tablet + mobile: number and text in one row, picture below */
+@media (max-width: 768px) {
+  .homeItem {
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .info {
+    padding-right: 0;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .infoBottom {
+    gap: 16px;
+  }
+
+  .image {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeItem {
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+}

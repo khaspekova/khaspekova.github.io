@@ -6,9 +6,9 @@ export default function SectionNumber({
   color?: string;
 }) {
   return (
-    <div className="ml-10!">
+    <div className="lg:ml-10!">
       <p
-        className={`text-[40px] leading-10 font-book ${color === "orange" ? "text-orange-new" : "text-gray-menu"}`}
+        className={`text-[28px] leading-7 md:text-[40px] md:leading-10 font-book ${color === "orange" ? "text-orange-new" : "text-gray-menu"}`}
       >
         {String(num).padStart(2, "0") + "/"}
       </p>

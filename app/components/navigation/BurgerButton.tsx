@@ -7,7 +7,7 @@ interface BurgerButtonProps {
 
 export default function BurgerButton({ onClick, isOpen }: BurgerButtonProps) {
   return (
-    <button onClick={onClick}>
+    <button onClick={onClick} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
       <div className={`${classes.burgerIcon} ${isOpen ? classes.open : ""}`}>
         <span className={classes.burgerLine}></span>
         <span className={classes.burgerLine}></span>

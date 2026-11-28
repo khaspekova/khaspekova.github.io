@@ -10,7 +10,7 @@ export default function LogoSection() {
   const isTablet = useMediaQuery(BREAKPOINTS.tablet);
 
   return (
-    <div className="flex flex-col gap-20 mt-[88px]! items-start w-full sm:w-2/3">
+    <div className="flex flex-col gap-12 md:gap-20 mt-12! md:mt-[88px]! items-start w-full lg:w-2/3">
       <div className="flex justify-start sm:justify-end w-full">
         <Image
           src="/images/k_logo_1.svg"
@@ -37,7 +37,7 @@ export default function LogoSection() {
             />
           ))}
         </div>
-        <p className="font-medium text-black-default text-[22px] leading-[26px] tracking-normal">
+        <p className="font-medium text-black-default text-lg leading-[22px] md:text-[22px] md:leading-[26px] tracking-normal">
           A selected set of projects I've built with individuals and teams. Keep
           building and {!isTablet && <br />}
           never stop playing.

@@ -19,7 +19,7 @@ export default function PublicityRow({
       <div className={classes.rowContent}>
         <div>
           {description.lines.map((line, i) => (
-            <p key={i} className="text-[20px] leading-[140%] font-medium">
+            <p key={i} className="text-lg md:text-[20px] leading-[140%] font-medium">
               {line}
               {i === description.lines.length - 1 && description.span && (
                 <span className="text-gray-publicity">{` ${description.span}`}</span>

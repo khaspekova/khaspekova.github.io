@@ -19,20 +19,30 @@
   gap: 10px;
 }
 
+@media (max-width: 1024px) {
+  .rowContent {
+    width: 75%;
+  }
+}
+
 @media (max-width: 768px) {
-  /* .row {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+  .row {
+    padding-top: 24px;
+    padding-bottom: 20px;
   }
 
   .firstRow {
-    padding-top: 75px;
-  } */
+    padding-top: 0;
+  }
+
+  .rowContent {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-  /* .row {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-  } */
+  .rowContent {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }

@@ -49,7 +49,7 @@ export default function HomePage() {
         <LogoSection />
       </section>
       <section
-        className="flex flex-col gap-[165px] mb-80 sm:mb-150"
+        className="flex flex-col gap-24 lg:gap-[165px] mb-40 lg:mb-150"
         ref={sectionsRefs.works}
       >
         {HOME_SECTIONS.map((item) => (
@@ -59,7 +59,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section ref={sectionsRefs.about} className="mb-[270px]">
+      <section ref={sectionsRefs.about} className="mb-32 lg:mb-[270px]">
         <AboutSection />
       </section>
 

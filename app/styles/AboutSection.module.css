@@ -4,7 +4,19 @@
 }
 
 @media (max-width: 768px) {
+  .aboutSectionGrid {
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .text {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 480px) {
+  .aboutSectionGrid {
+    column-gap: 16px;
+  }
 }

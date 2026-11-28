@@ -41,9 +41,9 @@ export default function HomeItem({
       onMouseLeave={cursorText ? handleMouseLeave : undefined}
     >
       <SectionNumber num={2} />
-      <div className="flex flex-col justify-between pr-5">
+      <div className={`${classes.info} flex flex-col justify-between`}>
         <h2 className="text-2xl leading-8 text-black font-medium">{title}</h2>
-        <div className="flex flex-col gap-11">
+        <div className={`${classes.infoBottom} flex flex-col`}>
           <p className="font-book text-base leading-5 text-black">
             {description}
           </p>
@@ -62,7 +62,7 @@ export default function HomeItem({
           )}
         </div>
       </div>
-      <Link href={href}>
+      <Link href={href} className={classes.image}>
         <Image
           src={img.src}
           alt=""
