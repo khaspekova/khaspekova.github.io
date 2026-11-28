@@ -57,20 +57,9 @@ export default function MainNavigation() {
   }
 
   return (
-    // <nav className={`${classes.nav} overflowComponent`}>
-    //   <ul>
-    //     {NAV_ITEMS.map((item, i) => (
-    //       <li key={item.id} className={classes[`column-${i}`]}>
-    //         <NavItem {...item} />
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </nav>
+    <nav className={`${classes.nav} overflowComponent`}>
+      <NavItem {...NAV_ITEMS[0]} />
 
-    <nav className={`${classes.nav}`}>
-      <div>
-        <NavItem {...NAV_ITEMS[0]} />
-      </div>
       <ul>
         {NAV_ITEMS.slice(1).map((item, i) => (
           <li key={item.id} className={classes[`column-${i}`]}>

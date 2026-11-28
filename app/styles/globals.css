@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -22,7 +23,6 @@
   --white-table: #dbdbdb;
   --gray-active: #353535;
   --gray-default: #858383;
-  --gray-disable: #aeaeae;
   --gray-disable-light: #c3c3c3;
   --gray-feature-bg: #f3f3f3;
   --purple-hover: #8a38f5;
@@ -32,7 +32,9 @@
   --blue-cornflower: #9db0dd;
   --orange-active: #c46901;
 
+  --gray-border: #aeaeae;
   --gray-menu: #6f7074;
+  --gray-publicity: #7a7a7a;
   --orange-new: #ff7716;
   --white-background: #f7f6f2;
 
@@ -53,41 +55,47 @@
   --breakpoint-2xl: 1536px;
 
   --font-family-neue: "NeueMontreal", Arial, sans-serif;
+  --font-family-jbmono: "JetBrains Mono", monospace;
 
+  --font-weight-light: 300;
   --font-weight-book: 400;
   --font-weight-medium: 500;
 
+  --color-gray-border: var(--gray-border);
   --color-gray-menu: var(--gray-menu);
+  --color-gray-publicity: var(--gray-publicity);
   --color-orange-new: var(--orange-new);
   --color-white-background: var(--white-background);
 }
 
-* {
-  margin: 0;
-  cursor: none;
-}
+@layer base {
+  * {
+    margin: 0;
+    cursor: none;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  background-color: var(--white-background);
-  color: var(--foreground);
-  font-family: "NeueMontreal", Arial, sans-serif;
-  font-weight: var(--font-weight-book);
-  cursor: none;
-}
+  body {
+    background-color: var(--white-background);
+    color: var(--foreground);
+    font-family: "NeueMontreal", Arial, sans-serif;
+    font-weight: var(--font-weight-book);
+    cursor: none;
+  }
 
-a {
-  text-decoration: none;
-  color: unset;
-}
+  a {
+    text-decoration: none;
+    color: unset;
+  }
 
-ul {
-  list-style: none;
+  ul {
+    list-style: none;
+  }
 }
 
 .root-layout {

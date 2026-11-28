@@ -7,7 +7,7 @@ import classes from "@/styles/HomeItem.module.css";
 
 import PictureContainer from "@/components/UI/PictureContainer";
 import TwoFonts from "@/components/UI/TwoFonts";
-import { IPictureContainerImage } from "@/content/home";
+import { IPictureContainerImage } from "@/components/UI/PictureContainer";
 // import { useMediaQuery, BREAKPOINTS } from "@/hooks/useMediaQuery";
 import { useCursorContext } from "@/hooks/useCursorContext";
 

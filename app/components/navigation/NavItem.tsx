@@ -34,11 +34,11 @@ export default function NavItem({
     if (pathname !== "/") {
       router.push("/");
       setTimeout(() => {
-        scrollToRef(id as "home" | "works" | "publicity" | "about" | "contact");
+        scrollToRef(id as "home" | "works" | "about" | "contact");
         setActiveSection(id);
       }, 100);
     } else {
-      scrollToRef(id as "home" | "works" | "publicity" | "about" | "contact");
+      scrollToRef(id as "home" | "works" | "about" | "contact");
       setActiveSection(id);
     }
     if (onNavigation) {

@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Static export for GitHub Pages (khaspekova.github.io)
+  output: "export",
+  trailingSlash: true,
   images: {
-    qualities: [75, 85, 90, 95],
-    formats: ["image/avif", "image/webp"],
-    // Server-side image optimization enabled
+    unoptimized: true,
   },
 };
 

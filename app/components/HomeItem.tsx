@@ -48,11 +48,17 @@ export default function HomeItem({
             {description}
           </p>
           {externalUrl && (
-            <div>
-              <Link href={externalUrl} target="_blank" className="underline!">
+            <a href={externalUrl} className="flex gap-[6px]" target="_blank">
+              <p className="underline! font-family-jbmono text-sm leading-[140%] tracking-[0px] font-light!">
                 visit site
-              </Link>
-            </div>
+              </p>
+              <Image
+                src="/icons/icon-outside-link-thin.svg"
+                alt=""
+                width={10}
+                height={10}
+              />
+            </a>
           )}
         </div>
       </div>

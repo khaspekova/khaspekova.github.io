@@ -4,7 +4,7 @@ import classes from "@/styles/FeatureDescription.module.css";
 
 import CaseText from "@/components/UI/CaseText";
 import PictureContainer from "@/components/UI/PictureContainer";
-import { IPictureContainerImage } from "@/content/home";
+import { IPictureContainerImage } from "@/components/UI/PictureContainer";
 
 interface IFeatureDescriptionRow {
   title: string;

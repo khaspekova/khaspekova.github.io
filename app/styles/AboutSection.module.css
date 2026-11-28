@@ -1,21 +1,10 @@
-.aboutSection {
+.aboutSectionGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  color: var(--white-default);
-  background-color: var(--black-default);
-  padding: 80px 20px;
+  grid-template-columns: 1fr 1fr 2fr;
 }
 
 @media (max-width: 768px) {
-  .aboutSection {
-    grid-template-columns: 1fr 2fr;
-    padding: 44px 20px;
-  }
 }
 
 @media (max-width: 480px) {
-  .aboutSection {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
-  }
 }

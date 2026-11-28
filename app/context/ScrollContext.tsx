@@ -6,7 +6,6 @@ export interface ScrollContextType {
   sectionsRefs: {
     home: React.RefObject<HTMLElement | null>;
     works: React.RefObject<HTMLElement | null>;
-    publicity: React.RefObject<HTMLElement | null>;
     about: React.RefObject<HTMLElement | null>;
     contact: React.RefObject<HTMLElement | null>;
   };
@@ -23,7 +22,6 @@ export const ScrollProvider = ({ children }: { children: ReactNode }) => {
   const sectionsRefs = {
     home: useRef<HTMLElement>(null),
     works: useRef<HTMLElement>(null),
-    publicity: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
   };

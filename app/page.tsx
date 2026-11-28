@@ -11,7 +11,6 @@ import { CONTACT_LINKS } from "@/content/links";
 import AboutSection from "@/components/About";
 import HomeItem from "@/components/HomeItem";
 import LogoSection from "@/components/LogoSection";
-import Publicity from "@/components/Publicity";
 
 export default function HomePage() {
   const { sectionsRefs, setActiveSection } = useScrollContext();
@@ -46,10 +45,13 @@ export default function HomePage() {
 
   return (
     <div className={classes.homeContainer}>
-      <section ref={sectionsRefs.home} className={classes.logoSection}>
+      <section ref={sectionsRefs.home} className="mb-20 sm:mb-40">
         <LogoSection />
       </section>
-      <section className="flex flex-col gap-[165px]" ref={sectionsRefs.works}>
+      <section
+        className="flex flex-col gap-[165px] mb-80 sm:mb-150"
+        ref={sectionsRefs.works}
+      >
         {HOME_SECTIONS.map((item) => (
           <div key={item.title}>
             <HomeItem {...item}>{item.childComponent}</HomeItem>
@@ -57,11 +59,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section ref={sectionsRefs.publicity}>
-        <Publicity />
-      </section>
-
-      <section ref={sectionsRefs.about} className={classes.homeAboutSection}>
+      <section ref={sectionsRefs.about} className="mb-[270px]">
         <AboutSection />
       </section>
 
@@ -70,7 +68,7 @@ export default function HomePage() {
         ref={sectionsRefs.contact as React.Ref<HTMLDivElement>}
       >
         <div>
-          <p className={`${classes.contactText} font-large-narrow`}>
+          <p className={`${classes.contactText}`}>
             Open for opportunities, discussion neurodivergence, or just to talk
             shop.
           </p>
@@ -97,5 +95,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// test

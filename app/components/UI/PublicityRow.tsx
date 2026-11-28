@@ -1,44 +1,35 @@
 import classes from "@/styles/PublicityRow.module.css";
 
 interface PublicityRowProps {
-  firstColumn: {
-    firstLine: string;
-    secondLine: string;
+  description: {
+    lines: Array<string>;
+    span?: string;
   };
-  secondColumn: {
-    firstLine: string;
-    span: string | null;
-  };
-  year: string;
+  where: string;
   firstRow?: boolean;
-  lastRow?: boolean;
 }
 
 export default function PublicityRow({
-  firstColumn,
-  secondColumn,
-  year,
+  description,
+  where,
   firstRow,
-  lastRow,
 }: PublicityRowProps) {
   return (
-    <div
-      className={`${classes.row} ${firstRow ? classes.firstRow : ""} ${
-        lastRow ? classes.lastRow : ""
-      }`}
-    >
-      <div className={`${classes.firstCol} font-base`}>
-        <p>{firstColumn.firstLine}</p>
-        <p>{firstColumn.secondLine}</p>
-      </div>
-      <div className={`${classes.secondCol} font-base`}>
-        <p>
-          {secondColumn.firstLine}
-          <span>{secondColumn.span ?? ""}</span>
+    <div className={`${classes.row} ${firstRow ? classes.firstRow : ""}`}>
+      <div className={classes.rowContent}>
+        <div>
+          {description.lines.map((line, i) => (
+            <p key={i} className="text-[20px] leading-[140%] font-medium">
+              {line}
+              {i === description.lines.length - 1 && description.span && (
+                <span className="text-gray-publicity">{` ${description.span}`}</span>
+              )}
+            </p>
+          ))}
+        </div>
+        <p className="text-gray-publicity text-sm font-medium font-family-jbmono">
+          {where}
         </p>
-      </div>
-      <div className={`${classes.thirdCol} font-base`}>
-        <p>{year}</p>
       </div>
     </div>
   );

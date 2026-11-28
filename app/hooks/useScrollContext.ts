@@ -11,7 +11,6 @@ const createDefaultRefs = (): React.RefObject<HTMLElement | null> => ({
 const defaultSectionsRefs: ScrollContextType["sectionsRefs"] = {
   home: createDefaultRefs(),
   works: createDefaultRefs(),
-  publicity: createDefaultRefs(),
   about: createDefaultRefs(),
   contact: createDefaultRefs(),
 };
